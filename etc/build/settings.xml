@@ -21,7 +21,7 @@
                         <enabled>false</enabled>
                     </snapshots>
                     <id>maven-poc-release</id>
-                    <url>${env.GITHUB_RELEASE_REPO_URL}</url>
+                    <url>https://maven.pkg.github.com/glotzTG/maven_poc</url>
                 </repository>
             </repositories>
         </profile>
