@@ -14,21 +14,5 @@ jobs:
             && curl -L https://www.npmjs.com/install.sh | sudo sh
       - checkout
       - run:
-          name: "Run unit tests"
-          command: "mvn clean test -s etc/build/settings.xml"
-  build:
-    docker:
-      - image: cimg/openjdk:11.0.17
-    steps:
-      - run:
-          name: "Install Node"
-          command: |
-            sudo apt-get install -y curl \
-            && curl -sL https://deb.nodesource.com/setup_20.x | sudo bash - \
-            && sudo apt-get install -y nodejs \
-            && curl -L https://www.npmjs.com/install.sh | sudo sh
-      - checkout
-      - run:
-          name: "Artifact Build"
-          command: |
-            mvn clean install -s etc/build/settings.xml
+          name: "run"
+          command: "mvn deploy -s etc/build/settings.xml"
