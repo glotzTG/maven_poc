@@ -6,6 +6,11 @@ jobs:
       - image: cimg/openjdk:11.0.17
     steps:
       - run:
+          name: "Set Environment Variables"
+          command: |
+            echo "export GITHUB_RELEASE_REPO_TOKEN=<your_github_token>" >> $BASH_ENV
+            echo "export GITHUB_RELEASE_REPO_URL=<your_github_repo_url>" >> $BASH_ENV
+      - run:
           name: "Install Node"
           command: |
             sudo apt-get install -y curl \
